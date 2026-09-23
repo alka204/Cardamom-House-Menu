@@ -10,13 +10,17 @@ interface MenuItemProps {
 export function MenuItem({ item, isSoldOut = false }: MenuItemProps) {
   return (
     <div
-      className={`group relative bg-white border border-[#E5DACB] rounded-xl p-5 sm:p-6 flex flex-col justify-between gap-4 transition-all duration-200 ${
+      className={`group relative rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-4 transition-all duration-300 backdrop-blur-xl border ${
         isSoldOut
-          ? "opacity-60 select-none bg-[#FAF7F2]"
-          : "hover:-translate-y-0.5 hover:border-[#B45309]/50 hover:shadow-xs"
+          ? "opacity-60 select-none bg-white/50 dark:bg-white/5 border-white/60 dark:border-white/5 shadow-xs"
+          : "bg-white/80 dark:bg-white/5 border-white/90 dark:border-white/10 shadow-md shadow-black/5 hover:shadow-xl hover:shadow-[#B45309]/15 hover:border-[#B45309]/50 hover:bg-white/95 dark:hover:bg-white/10 hover:-translate-y-1"
       }`}
       aria-label={isSoldOut ? `${item.name} — Sold out` : undefined}
     >
+      {/* Subtle Hover Ambient Glow Blob */}
+      {!isSoldOut && (
+        <div className="absolute -right-12 -bottom-12 w-36 h-36 bg-gradient-to-br from-[#B45309]/0 via-[#B45309]/10 to-[#B45309]/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
+      )}
       <div className="space-y-2">
         {/* Name & Price Header */}
         <div className="flex items-baseline justify-between gap-4">

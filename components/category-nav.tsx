@@ -48,12 +48,12 @@ export function CategoryNav({
   return (
     <nav
       aria-label="Menu categories"
-      className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#F8F4EE]/95 border-y border-[#EFE4D3] transition-all py-3"
+      className="sticky top-0 z-40 w-full backdrop-blur-2xl bg-white/80 dark:bg-[#14110F]/85 border-y border-white/80 dark:border-white/10 shadow-md shadow-black/5 transition-all py-3"
     >
       <Container>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           {/* Category Tabs */}
-          <ul className="flex items-center gap-6 sm:gap-8 overflow-x-auto no-scrollbar py-1 scroll-smooth shrink-0">
+          <ul className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth shrink-0">
             {navItems.map((item) => {
               const isActive = activeId === item.id;
 
@@ -62,10 +62,10 @@ export function CategoryNav({
                   <a
                     href={`#${item.id}`}
                     onClick={(e) => handleNavClick(e, item.id)}
-                    className={`relative inline-block pb-1 text-xs sm:text-sm font-sans uppercase tracking-widest transition-all duration-150 focus-visible:outline-none ${
+                    className={`relative inline-flex items-center px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-sans font-bold uppercase tracking-wider transition-all duration-300 ease-out cursor-pointer focus-visible:outline-none ${
                       isActive
-                        ? "text-[#B45309] font-bold border-b-2 border-[#B45309]"
-                        : "text-[#756A61] hover:text-[#B45309] font-semibold border-b-2 border-transparent"
+                        ? "bg-gradient-to-r from-[#B45309] via-[#C45A08] to-[#D97706] text-white shadow-md shadow-[#B45309]/30 scale-[1.03]"
+                        : "text-[#756A61] dark:text-[#C7BBB0] hover:text-[#2B211B] dark:hover:text-[#F5EFE6] hover:bg-white/80 dark:hover:bg-white/10 border border-transparent hover:border-white/60 dark:hover:border-white/10 hover:scale-[1.02]"
                     }`}
                   >
                     {item.name}
@@ -89,7 +89,3 @@ export function CategoryNav({
     </nav>
   );
 }
-
-
-
-

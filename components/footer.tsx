@@ -15,7 +15,7 @@ export function Footer({ name, address, phone, instagram }: FooterProps) {
   const instagramUrl = `https://instagram.com/${instagram.replace("@", "")}`;
 
   return (
-    <footer className="bg-[#FAF7F2] text-[#2B211B] py-10 sm:py-14 font-sans border-t border-[#E5DACB]">
+    <footer className="bg-white/70 dark:bg-white/5 backdrop-blur-xl text-[#2B211B] dark:text-[#F5EFE6] py-10 sm:py-14 font-sans border-t border-white/80 dark:border-white/10 shadow-lg">
       <Container>
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           {/* Left: Brand Name & Copyright */}

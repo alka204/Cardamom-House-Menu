@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { restaurantData } from "@/data/restaurant";
 import { deriveState } from "@/utils/state";
 
-import { SiteHeader } from "@/components/header";
 import { ClosedBanner } from "@/components/closed-banner";
 import { Hero } from "@/components/hero";
 import { TodaySpecial } from "@/components/today-special";
@@ -25,7 +24,10 @@ export default async function Page({ searchParams }: PageProps) {
   const soldOutItemId = derivedState.isSoldOut ? today_special.item_id : undefined;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F4EE] text-[#2A221C] font-sans selection:bg-[#B45309]/20 selection:text-[#B45309] relative">
+    <div className="min-h-screen flex flex-col bg-[#F8F4EE] dark:bg-[#14110F] text-[#2A221C] dark:text-[#F5EFE6] font-sans selection:bg-[#B45309]/20 selection:text-[#B45309] relative transition-colors duration-200 overflow-hidden">
+      {/* Background Ambient Radial Glow Effects */}
+      <div className="fixed top-1/3 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#B45309]/15 via-[#F59E0B]/10 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="fixed bottom-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-gradient-to-bl from-[#D97706]/15 via-[#B45309]/10 to-transparent blur-3xl pointer-events-none -z-10" />
       {/* 1. Closed State Alert Banner */}
       {!derivedState.isOpen && (
         <ClosedBanner
@@ -34,10 +36,7 @@ export default async function Page({ searchParams }: PageProps) {
         />
       )}
 
-      {/* 2. Site Header & Simulator Bar */}
-      <SiteHeader />
-
-      {/* 3. Hero Section */}
+      {/* 2. Hero Section */}
       <Hero
         name={restaurant.name}
         tagline={restaurant.tagline}

@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* ── Cardamom House — Google Stitch Palette ── */
-  --color-stitch-bg:       #F8F4EE;  /* Warm ivory page canvas */
-  --color-stitch-card:     #FFFFFF;  /* Pure white cards */
-  --color-stitch-border:   #E8E2D5;  /* Soft warm border */
-  --color-stitch-primary:  #2A221C;  /* Dark espresso text */
-  --color-stitch-muted:    #786C62;  /* Muted warm brown text */
-  --color-stitch-terracotta: #B45309;/* Warm amber brand color accent */
+  --color-stitch-bg:       #F8F4EE;
+  --color-stitch-card:     #FFFFFF;
+  --color-stitch-border:   #E8E2D5;
+  --color-stitch-primary:  #2A221C;
+  --color-stitch-muted:    #786C62;
+  --color-stitch-terracotta: #B45309;
   
   --color-brand-amber:     #B45309;
   --color-brand-700:       #B45309;
@@ -23,12 +25,13 @@
   --font-serif: var(--font-cormorant), Georgia, serif;
 }
 
-/* Base Styles */
+/* Base Light Styles */
 html {
   scroll-behavior: smooth;
   background-color: #F8F4EE;
   color: #2A221C;
   font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {
@@ -36,6 +39,88 @@ body {
   background-color: #F8F4EE;
   color: #2A221C;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── Dark Mode Root Overrides ── */
+html.dark {
+  background-color: #14110F !important;
+  color: #F5EFE6 !important;
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #14110F !important;
+  color: #F5EFE6 !important;
+}
+
+/* Base text color overrides for Dark Mode */
+.dark .text-\[\#2B211B\] {
+  color: #F5EFE6 !important;
+}
+
+.dark .text-\[\#756A61\] {
+  color: #C7BBB0 !important;
+}
+
+.dark .text-\[\#B45309\] {
+  color: #F59E0B !important;
+}
+
+/* Surface & Background overrides for Dark Mode */
+.dark .bg-\[\#F8F4EE\] {
+  background-color: #14110F !important;
+}
+
+.dark .bg-\[\#FAF7F2\] {
+  background-color: #1E1916 !important;
+}
+
+.dark .bg-white {
+  background-color: #241F1C !important;
+}
+
+.dark .bg-white\/70 {
+  background-color: rgba(36, 31, 28, 0.85) !important;
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(36, 31, 28, 0.9) !important;
+}
+
+.dark .bg-\[\#F8F4EE\]\/95 {
+  background-color: rgba(20, 17, 15, 0.95) !important;
+}
+
+/* Border overrides for Dark Mode */
+.dark .border-\[\#E5DACB\],
+.dark .border-\[\#EFE4D3\],
+.dark .border-white\/80 {
+  border-color: #3D352E !important;
+}
+
+/* Badge & Tag Overrides for Dark Mode */
+.dark .bg-\[\#E2EFE4\] {
+  background-color: #1B3624 !important;
+}
+
+.dark .text-\[\#2D6A3F\] {
+  color: #86EFAC !important;
+}
+
+.dark .bg-\[\#FDF0EE\] {
+  background-color: #421A18 !important;
+}
+
+.dark .text-\[\#D9381E\] {
+  color: #FCA5A5 !important;
+}
+
+.dark .bg-\[\#EFE4D3\] {
+  background-color: #352D26 !important;
+}
+
+.dark .bg-\[\#EFE4D3\]\/80 {
+  background-color: rgba(53, 45, 38, 0.8) !important;
 }
 
 /* Hide scrollbar for category navigation */
@@ -46,7 +131,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 
 /* Global Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -88,4 +172,3 @@ body {
     color: #000000 !important;
   }
 }
-

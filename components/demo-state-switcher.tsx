@@ -18,8 +18,8 @@ export function DemoStateSwitcher() {
 
   return (
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 font-sans pointer-events-auto">
-      <div className="bg-white/80 backdrop-blur-xl border border-white/80 shadow-lg rounded-full p-1.5 flex items-center gap-1.5 text-xs">
-        <span className="px-3 text-[10px] font-sans font-extrabold uppercase tracking-widest text-[#756A61]/70">
+      <div className="bg-white/80 dark:bg-[#241F1C]/90 backdrop-blur-xl border border-white/80 dark:border-[#3D352E] shadow-lg rounded-full p-1.5 flex items-center gap-1.5 text-xs transition-colors">
+        <span className="px-3 text-[10px] font-sans font-extrabold uppercase tracking-widest text-[#756A61]/70 dark:text-[#C7BBB0]/70">
           DEMO
         </span>
         <button
@@ -28,7 +28,7 @@ export function DemoStateSwitcher() {
           className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
             currentState === "open"
               ? "bg-[#B45309] text-white shadow-xs"
-              : "text-[#756A61] hover:text-[#2B211B] hover:bg-white/50"
+              : "text-[#756A61] dark:text-[#C7BBB0] hover:text-[#2B211B] dark:hover:text-[#F5EFE6] hover:bg-white/50 dark:hover:bg-white/10"
           }`}
         >
           Open
@@ -39,7 +39,7 @@ export function DemoStateSwitcher() {
           className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
             currentState === "closed"
               ? "bg-[#B45309] text-white shadow-xs"
-              : "text-[#756A61] hover:text-[#2B211B] hover:bg-white/50"
+              : "text-[#756A61] dark:text-[#C7BBB0] hover:text-[#2B211B] dark:hover:text-[#F5EFE6] hover:bg-white/50 dark:hover:bg-white/10"
           }`}
         >
           Closed
@@ -50,7 +50,7 @@ export function DemoStateSwitcher() {
           className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
             currentState === "special-sold-out"
               ? "bg-[#B45309] text-white shadow-xs"
-              : "text-[#756A61] hover:text-[#2B211B] hover:bg-white/50"
+              : "text-[#756A61] dark:text-[#C7BBB0] hover:text-[#2B211B] dark:hover:text-[#F5EFE6] hover:bg-white/50 dark:hover:bg-white/10"
           }`}
         >
           Special sold out

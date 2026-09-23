@@ -33,8 +33,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
-      <body className="font-sans bg-[#F7F2E8] text-[#2B211B] antialiased selection:bg-[#C45A08]/20 selection:text-[#C45A08]">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${cormorant.variable}`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
+              try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            })();`,
+          }}
+        />
+      </head>
+      <body className="font-sans bg-[#F8F4EE] text-[#2A221C] dark:bg-[#14110F] dark:text-[#F5EFE6] antialiased selection:bg-[#B45309]/20 selection:text-[#B45309]">
         {children}
       </body>
     </html>

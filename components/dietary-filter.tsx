@@ -21,7 +21,7 @@ export function DietaryFilter({
 
   return (
     <div className="flex items-center gap-2" aria-label="Dietary filter">
-      <span className="text-[11px] font-sans uppercase tracking-widest text-[#756A61] font-semibold hidden md:inline">
+      <span className="text-[11px] font-sans uppercase tracking-widest text-[#756A61] dark:text-[#C7BBB0] font-semibold hidden md:inline">
         FILTER:
       </span>
       <div className="flex items-center gap-1.5 flex-wrap">
@@ -34,8 +34,8 @@ export function DietaryFilter({
               onClick={() => onFilterChange(option.id)}
               className={`px-3 py-1 sm:px-3.5 sm:py-1 rounded-full text-xs font-sans font-semibold transition-all cursor-pointer ${
                 isActive
-                  ? "bg-[#B45309] text-white shadow-xs"
-                  : "bg-white border border-[#E5DACB] text-[#756A61] hover:bg-[#EFE4D3]/50 hover:text-[#2B211B]"
+                  ? "bg-gradient-to-r from-[#B45309] to-[#D97706] text-white shadow-md shadow-[#B45309]/20 scale-[1.02]"
+                  : "bg-white/80 dark:bg-white/10 backdrop-blur-md border border-white/90 dark:border-white/15 text-[#756A61] dark:text-[#C7BBB0] hover:bg-white dark:hover:bg-white/20 hover:text-[#2B211B] dark:hover:text-[#F5EFE6]"
               }`}
             >
               {option.label}
