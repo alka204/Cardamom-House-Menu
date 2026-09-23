@@ -103,22 +103,22 @@ export function HoursSection({ currentDay }: HoursSectionProps) {
 
                 {/* Location Details */}
                 <div className="space-y-3 text-xs sm:text-sm font-sans text-[#2B211B] dark:text-[#F5EFE6] pt-2">
-                  <div className="flex items-start gap-3">
-                    <span className="text-base text-[#B45309] dark:text-[#F59E0B]">📍</span>
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-[#B45309] dark:text-[#F59E0B]">Address:</span>
                     <span>Rua da Boavista 84, 1200-066 Lisboa, Portugal</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-base text-[#B45309] dark:text-[#F59E0B]">🚊</span>
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-[#B45309] dark:text-[#F59E0B]">Transit:</span>
                     <span>Tram 25E / 28E or Metro Cais do Sodré</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-base text-[#B45309] dark:text-[#F59E0B]">📞</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-[#B45309] dark:text-[#F59E0B]">Phone:</span>
                     <a href="tel:+351211234567" className="hover:text-[#B45309] dark:hover:text-[#F59E0B] font-medium transition-colors">
                       +351 21 123 4567
                     </a>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-base text-[#B45309] dark:text-[#F59E0B]">📸</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-[#B45309] dark:text-[#F59E0B]">Instagram:</span>
                     <a
                       href="https://instagram.com/cardamomhouse"
                       target="_blank"

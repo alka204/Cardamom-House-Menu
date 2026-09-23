@@ -69,7 +69,7 @@ export function MenuItem({ item, isSoldOut = false }: MenuItemProps) {
               }`}
               title={getTagLabel(tag)}
             >
-              {tag === "spicy" ? "Spicy 🌶️" : tag === "V" ? "V · Vegetarian" : tag === "GF" ? "GF · Gluten-Free" : tag}
+              {tag === "spicy" ? "Spicy 🌶️" : tag === "V" ? "Vegetarian" : tag === "GF" ? "Gluten-Free" : tag}
             </span>
           ))
         )}

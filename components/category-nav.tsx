@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import { Container } from "./ui/container";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { DietaryFilter, DietaryFilterType } from "./dietary-filter";
@@ -21,6 +21,8 @@ export function CategoryNav({
   activeFilter = "all",
   onFilterChange,
 }: CategoryNavProps) {
+  const navRef = useRef<HTMLElement>(null);
+
   const navItems = useMemo(
     () => [
       ...categories,
@@ -39,16 +41,18 @@ export function CategoryNav({
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -80; // Account for sticky nav height
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
+      const navHeight = navRef.current?.getBoundingClientRect().height || 64;
+      const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+      const targetY = elementTop - navHeight - 16;
+      window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
     }
   };
 
   return (
     <nav
+      ref={navRef}
       aria-label="Menu categories"
-      className="sticky top-0 z-40 w-full backdrop-blur-2xl bg-white/80 dark:bg-[#14110F]/85 border-y border-white/80 dark:border-white/10 shadow-md shadow-black/5 transition-all py-3"
+      className="sticky top-0 z-40 w-full backdrop-blur-2xl bg-white/95 dark:bg-[#14110F]/95 border-y border-white/80 dark:border-white/10 shadow-md shadow-black/5 transition-all py-3"
     >
       <Container>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">

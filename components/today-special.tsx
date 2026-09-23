@@ -50,7 +50,7 @@ export function TodaySpecial({ blurb, isSoldOut }: TodaySpecialProps) {
                   CHEF&apos;S RECOMMENDATION
                 </span>
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-sans font-semibold bg-[#E2EFE4] dark:bg-[#1B3624] text-[#2D6A3F] dark:text-[#86EFAC] shadow-xs">
-                  V · Vegetarian
+                  Vegetarian
                 </span>
                 {isSoldOut && <Badge variant="soldOut">SOLD OUT</Badge>}
               </div>
@@ -90,15 +90,15 @@ export function TodaySpecial({ blurb, isSoldOut }: TodaySpecialProps) {
             </div>
 
             {/* Right Action CTA */}
-            <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#E5DACB] dark:border-white/10">
+            <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3 pt-4 lg:pt-0 border-t lg:border-t-0 border-[#E5DACB] dark:border-white/10 w-full sm:w-auto">
               {isSoldOut ? (
-                <div className="px-6 py-3 rounded-full bg-[#EFE4D3] dark:bg-white/10 text-[#756A61] dark:text-[#C7BBB0] text-xs font-sans font-semibold tracking-wider uppercase border border-[#E5DACB] dark:border-white/10">
+                <div className="px-6 py-3 rounded-full bg-[#EFE4D3] dark:bg-white/10 text-[#756A61] dark:text-[#C7BBB0] text-xs font-sans font-semibold tracking-wider uppercase border border-[#E5DACB] dark:border-white/10 text-center w-full sm:w-auto">
                   Sold out for today
                 </div>
               ) : (
                 <a
                   href="#brunch"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider bg-gradient-to-r from-[#B45309] via-[#C45A08] to-[#D97706] text-white shadow-lg shadow-[#B45309]/30 hover:shadow-xl hover:shadow-amber-500/30 transition-all hover:scale-[1.03]"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-xs font-sans font-bold uppercase tracking-wider bg-gradient-to-r from-[#B45309] via-[#C45A08] to-[#D97706] text-white shadow-lg shadow-[#B45309]/30 hover:shadow-xl hover:shadow-amber-500/30 transition-all hover:scale-[1.02] w-full sm:w-auto text-center"
                 >
                   Order in Brunch
                 </a>

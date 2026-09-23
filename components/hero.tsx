@@ -31,9 +31,8 @@ export function Hero({
           {/* Glass Status Pill */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-sans font-semibold uppercase tracking-wider bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-white/90 dark:border-white/15 text-[#756A61] dark:text-[#C7BBB0] shadow-md shadow-black/5">
             <span
-              className={`h-2.5 w-2.5 rounded-full ${
-                isOpen ? "bg-[#2D6A3F] dark:bg-[#86EFAC] animate-pulse shadow-sm shadow-emerald-500/50" : "bg-[#756A61] dark:bg-[#A89B90]"
-              }`}
+              className={`h-2.5 w-2.5 rounded-full ${isOpen ? "bg-[#2D6A3F] dark:bg-[#86EFAC] animate-pulse shadow-sm shadow-emerald-500/50" : "bg-[#756A61] dark:bg-[#A89B90]"
+                }`}
             />
             <span>
               {isOpen
@@ -50,8 +49,8 @@ export function Hero({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16 pt-2">
           {/* Left Side: Title & Subtitle */}
           <div className="space-y-6 max-w-3xl">
-            {/* Title with Gradient Accent */}
-            <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-normal tracking-tight text-[#2B211B] dark:text-[#F5EFE6] leading-[0.92]">
+            {/* Title */}
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl 2xl:text-[7rem] font-normal tracking-tight text-[#2B211B] dark:text-[#F5EFE6] leading-[0.95] whitespace-normal lg:whitespace-nowrap">
               {name || "Cardamom House"}
             </h1>
 
@@ -61,16 +60,16 @@ export function Hero({
             </p>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-4 pt-2 flex-wrap">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
               <a
                 href="#brunch"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-sans font-bold uppercase tracking-wider bg-gradient-to-r from-[#B45309] via-[#C45A08] to-[#D97706] text-white shadow-lg shadow-[#B45309]/30 hover:shadow-xl hover:shadow-amber-500/30 transition-all hover:scale-[1.03]"
+                className="inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-sans font-bold uppercase tracking-wider bg-gradient-to-r from-[#B45309] via-[#C45A08] to-[#D97706] text-white shadow-lg shadow-[#B45309]/30 hover:shadow-xl hover:shadow-amber-500/30 transition-all hover:scale-[1.02] w-full sm:w-auto"
               >
                 View menu
               </a>
               <a
                 href="#special"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-sans font-bold uppercase tracking-wider bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-white/90 dark:border-white/15 text-[#2B211B] dark:text-[#F5EFE6] hover:bg-white dark:hover:bg-white/20 hover:border-[#B45309]/50 shadow-md shadow-black/5 transition-all hover:scale-[1.03]"
+                className="inline-flex items-center justify-center px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm font-sans font-bold uppercase tracking-wider bg-white/80 dark:bg-white/10 backdrop-blur-xl border border-white/90 dark:border-white/15 text-[#2B211B] dark:text-[#F5EFE6] hover:bg-white dark:hover:bg-white/20 hover:border-[#B45309]/50 shadow-md shadow-black/5 transition-all hover:scale-[1.02] w-full sm:w-auto"
               >
                 Today&apos;s special
               </a>
