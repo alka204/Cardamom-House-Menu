@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Cardamom House — Google Stitch Palette ── */
+  --color-stitch-bg:       #F8F4EE;  /* Warm ivory page canvas */
+  --color-stitch-card:     #FFFFFF;  /* Pure white cards */
+  --color-stitch-border:   #E8E2D5;  /* Soft warm border */
+  --color-stitch-primary:  #2A221C;  /* Dark espresso text */
+  --color-stitch-muted:    #786C62;  /* Muted warm brown text */
+  --color-stitch-terracotta: #B45309;/* Warm amber brand color accent */
+  
+  --color-brand-amber:     #B45309;
+  --color-brand-700:       #B45309;
+  --color-cafe-bg:         #F8F4EE;
+  --color-cafe-surface:    #F4ECE1;
+  --color-cafe-primary:    #2A221C;
+  --color-cafe-muted:      #786C62;
+  --color-cafe-border:     #E8E2D5;
+  --color-cafe-accent:     #B45309;
+
+  /* ── Typography ── */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #F8F4EE;
+  color: #2A221C;
+  font-family: var(--font-sans);
+}
+
+body {
+  min-height: 100vh;
+  background-color: #F8F4EE;
+  color: #2A221C;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for category navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* Global Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Print Styles (@media print) ── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  nav,
+  [role="alert"],
+  .animate-ping {
+    display: none !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  header {
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 1rem !important;
+  }
+
+  h1, h2, h3 {
+    color: #000000 !important;
+  }
+}
+
