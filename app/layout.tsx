@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -39,7 +40,9 @@ export default function RootLayout({
       className={`${inter.variable} ${cormorant.variable}`}
     >
       <head>
-        <script
+        <Script
+          id="theme-initializer"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function() {
               try {
@@ -54,7 +57,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans bg-[#F8F4EE] text-[#2A221C] dark:bg-[#14110F] dark:text-[#F5EFE6] antialiased selection:bg-[#B45309]/20 selection:text-[#B45309]">
+      <body className="font-sans bg-[#F8F4EE] text-[#2A221C] dark:bg-[#0D0F12] dark:text-[#F8FAFC] antialiased selection:bg-[#B45309]/20 selection:text-[#B45309]">
         {children}
       </body>
     </html>

@@ -4,21 +4,21 @@
 
 @theme {
   /* ── Cardamom House — Google Stitch Palette ── */
-  --color-stitch-bg:       #F8F4EE;
-  --color-stitch-card:     #FFFFFF;
-  --color-stitch-border:   #E8E2D5;
-  --color-stitch-primary:  #2A221C;
-  --color-stitch-muted:    #786C62;
+  --color-stitch-bg: #F8F4EE;
+  --color-stitch-card: #FFFFFF;
+  --color-stitch-border: #E8E2D5;
+  --color-stitch-primary: #2A221C;
+  --color-stitch-muted: #786C62;
   --color-stitch-terracotta: #B45309;
-  
-  --color-brand-amber:     #B45309;
-  --color-brand-700:       #B45309;
-  --color-cafe-bg:         #F8F4EE;
-  --color-cafe-surface:    #F4ECE1;
-  --color-cafe-primary:    #2A221C;
-  --color-cafe-muted:      #786C62;
-  --color-cafe-border:     #E8E2D5;
-  --color-cafe-accent:     #B45309;
+
+  --color-brand-amber: #B45309;
+  --color-brand-700: #B45309;
+  --color-cafe-bg: #F8F4EE;
+  --color-cafe-surface: #F4ECE1;
+  --color-cafe-primary: #2A221C;
+  --color-cafe-muted: #786C62;
+  --color-cafe-border: #E8E2D5;
+  --color-cafe-accent: #B45309;
 
   /* ── Typography ── */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -43,23 +43,23 @@ body {
 
 /* ── Dark Mode Root Overrides ── */
 html.dark {
-  background-color: #14110F !important;
-  color: #F5EFE6 !important;
+  background-color: #0D0F12 !important;
+  color: #F8FAFC !important;
   color-scheme: dark;
 }
 
 html.dark body {
-  background-color: #14110F !important;
-  color: #F5EFE6 !important;
+  background-color: #0D0F12 !important;
+  color: #F8FAFC !important;
 }
 
 /* Base text color overrides for Dark Mode */
 .dark .text-\[\#2B211B\] {
-  color: #F5EFE6 !important;
+  color: #F8FAFC !important;
 }
 
 .dark .text-\[\#756A61\] {
-  color: #C7BBB0 !important;
+  color: #94A3B8 !important;
 }
 
 .dark .text-\[\#B45309\] {
@@ -68,65 +68,74 @@ html.dark body {
 
 /* Surface & Background overrides for Dark Mode */
 .dark .bg-\[\#F8F4EE\] {
-  background-color: #14110F !important;
+  background-color: #0D0F12 !important;
 }
 
 .dark .bg-\[\#FAF7F2\] {
-  background-color: #1E1916 !important;
+  background-color: #12151B !important;
 }
 
 .dark .bg-white {
-  background-color: #241F1C !important;
+  background-color: #181C24 !important;
 }
 
 .dark .bg-white\/70 {
-  background-color: rgba(36, 31, 28, 0.85) !important;
+  background-color: rgba(24, 28, 36, 0.85) !important;
 }
 
 .dark .bg-white\/80 {
-  background-color: rgba(36, 31, 28, 0.9) !important;
+  background-color: rgba(24, 28, 36, 0.9) !important;
+}
+
+.dark .bg-white\/85 {
+  background-color: rgba(24, 28, 36, 0.92) !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(24, 28, 36, 0.95) !important;
 }
 
 .dark .bg-\[\#F8F4EE\]\/95 {
-  background-color: rgba(20, 17, 15, 0.95) !important;
+  background-color: rgba(13, 15, 18, 0.95) !important;
 }
 
 /* Border overrides for Dark Mode */
 .dark .border-\[\#E5DACB\],
 .dark .border-\[\#EFE4D3\],
 .dark .border-white\/80 {
-  border-color: #3D352E !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Badge & Tag Overrides for Dark Mode */
 .dark .bg-\[\#E2EFE4\] {
-  background-color: #1B3624 !important;
+  background-color: rgba(16, 185, 129, 0.15) !important;
 }
 
 .dark .text-\[\#2D6A3F\] {
-  color: #86EFAC !important;
+  color: #34D399 !important;
 }
 
 .dark .bg-\[\#FDF0EE\] {
-  background-color: #421A18 !important;
+  background-color: rgba(239, 68, 68, 0.15) !important;
 }
 
 .dark .text-\[\#D9381E\] {
-  color: #FCA5A5 !important;
+  color: #F87171 !important;
 }
 
 .dark .bg-\[\#EFE4D3\] {
-  background-color: #352D26 !important;
+  background-color: #1E232F !important;
 }
 
 .dark .bg-\[\#EFE4D3\]\/80 {
-  background-color: rgba(53, 45, 38, 0.8) !important;
+  background-color: rgba(30, 35, 47, 0.8) !important;
 }
 
 /* Hide scrollbar for category navigation */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -137,7 +146,10 @@ html.dark body {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -146,29 +158,101 @@ html.dark body {
 
 /* ── Print Styles (@media print) ── */
 @media print {
-  body {
-    background: #ffffff !important;
-    color: #000000 !important;
+  @page {
+    margin: 1.2cm 1.5cm;
   }
 
+  body,
+  html {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  /* Strip background gradients, glow blobs, dark mode colors, shadows, and backdrop filters */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Strict exclusion of all non-menu elements */
+  header,
   nav,
+  footer,
   [role="alert"],
-  .animate-ping {
+  [role="status"],
+  .animate-ping,
+  .print\:hidden,
+  .print-hidden,
+  #hero,
+  #special,
+  #hours,
+  .fixed,
+  button,
+  a[href^="#"] {
     display: none !important;
   }
 
+  /* Always display print-only brand header */
+  .print\:block,
+  .print-only-header {
+    display: block !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Prevent page breaks inside menu sections */
   section {
     page-break-inside: avoid;
-    padding-top: 1rem !important;
+    break-inside: avoid;
+    padding-top: 0.75rem !important;
     padding-bottom: 1rem !important;
+    border-bottom: 1px solid #d1d5db !important;
   }
 
-  header {
-    border-bottom: 2px solid #000000 !important;
-    padding-bottom: 1rem !important;
+  /* 2-column grid layout for print menu items */
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
   }
 
-  h1, h2, h3 {
+  /* Menu cards in print mode */
+  div.group {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    background: #ffffff !important;
+  }
+
+  h1,
+  h2,
+  h3 {
     color: #000000 !important;
+  }
+
+  /* Ensure text colors in dark mode or amber overrides print cleanly in black/dark gray */
+  .text-\[\#2B211B\],
+  .text-\[\#756A61\],
+  .text-\[\#B45309\] {
+    color: #000000 !important;
+  }
+
+  /* Badge styling in print */
+  span.rounded-full {
+    border: 1px solid #9ca3af !important;
+    background: #f3f4f6 !important;
+    color: #111827 !important;
   }
 }

@@ -9,6 +9,7 @@ import { MenuContainer } from "@/components/menu-container";
 import { HoursSection } from "@/components/hours-section";
 import { Footer } from "@/components/footer";
 import { DemoStateSwitcher } from "@/components/demo-state-switcher";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
 interface PageProps {
   searchParams: Promise<{ state?: string }>;
@@ -24,10 +25,24 @@ export default async function Page({ searchParams }: PageProps) {
   const soldOutItemId = derivedState.isSoldOut ? today_special.item_id : undefined;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F4EE] dark:bg-[#14110F] text-[#2A221C] dark:text-[#F5EFE6] font-sans selection:bg-[#B45309]/20 selection:text-[#B45309] relative transition-colors duration-200 overflow-x-clip">
+    <div className="min-h-screen flex flex-col bg-[#F8F4EE] dark:bg-[#0D0F12] text-[#2A221C] dark:text-[#F8FAFC] font-sans selection:bg-[#B45309]/20 selection:text-[#B45309] relative transition-colors duration-200 overflow-x-clip">
       {/* Background Ambient Radial Glow Effects */}
-      <div className="fixed top-1/3 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#B45309]/15 via-[#F59E0B]/10 to-transparent blur-3xl pointer-events-none -z-10" />
-      <div className="fixed bottom-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-gradient-to-bl from-[#D97706]/15 via-[#B45309]/10 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="fixed top-1/3 -left-20 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#B45309]/15 via-[#F59E0B]/10 to-transparent blur-3xl pointer-events-none -z-10 print:hidden" />
+      <div className="fixed bottom-1/4 -right-20 w-[550px] h-[550px] rounded-full bg-gradient-to-bl from-[#D97706]/15 via-[#B45309]/10 to-transparent blur-3xl pointer-events-none -z-10 print:hidden" />
+
+      {/* 0. Print-Only Brand Header (Visible ONLY when printing) */}
+      <div className="hidden print:block text-center py-6 mb-6 border-b-2 border-black">
+        <h1 className="font-serif text-4xl font-bold tracking-tight text-black uppercase">
+          {restaurant.name}
+        </h1>
+        <p className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gray-700 mt-1">
+          {restaurant.tagline}
+        </p>
+        <p className="font-sans text-xs text-gray-600 mt-1">
+          {restaurant.address} · Tel: {restaurant.phone}
+        </p>
+      </div>
+
       {/* 1. Closed State Alert Banner */}
       {!derivedState.isOpen && (
         <ClosedBanner
@@ -54,7 +69,7 @@ export default async function Page({ searchParams }: PageProps) {
       {/* 5. Sticky Category Navigation & Menu Container */}
       <Suspense
         fallback={
-          <div className="sticky top-0 z-40 w-full h-12 bg-[#F8F4EE]/90 backdrop-blur-md border-y border-[#E8E2D5]" />
+          <div className="sticky top-0 z-40 w-full h-12 bg-[#F8F4EE]/90 backdrop-blur-md border-y border-[#E8E2D5] print:hidden" />
         }
       >
         <MenuContainer
@@ -76,6 +91,9 @@ export default async function Page({ searchParams }: PageProps) {
         phone={restaurant.phone}
         instagram={restaurant.instagram}
       />
+
+      {/* Floating Scroll to Top Quick Action Button */}
+      <ScrollToTopButton />
 
       {/* 8. Floating Glassmorphism Demo State Switcher */}
       <Suspense fallback={null}>

@@ -17,9 +17,9 @@ export function DemoStateSwitcher() {
   };
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 font-sans pointer-events-auto">
-      <div className="bg-white/80 dark:bg-[#241F1C]/90 backdrop-blur-xl border border-white/80 dark:border-[#3D352E] shadow-lg rounded-full p-1.5 flex items-center gap-1.5 text-xs transition-colors">
-        <span className="px-3 text-[10px] font-sans font-extrabold uppercase tracking-widest text-[#756A61]/70 dark:text-[#C7BBB0]/70">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 font-sans pointer-events-auto print:hidden">
+      <div className="bg-white/80 dark:bg-[#181C24]/90 backdrop-blur-xl border border-white/80 dark:border-white/15 shadow-lg rounded-full p-1.5 flex items-center gap-1.5 text-xs transition-colors">
+        <span className="px-3 text-[10px] font-sans font-extrabold uppercase tracking-widest text-[#756A61]/70 dark:text-[#94A3B8]/70">
           DEMO
         </span>
         <button
